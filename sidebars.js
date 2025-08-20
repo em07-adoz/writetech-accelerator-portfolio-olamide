@@ -28,22 +28,40 @@ const sidebars = {
     },
   ],
   toolingSidebar: [
-    'documentation-tooling/intro',
+    {
+      type: 'doc',
+      label: 'Introduction',
+      id: 'documentation-tooling/intro',
+    },
     {
       type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
+      label: 'Fast API',
+      link: {
+        type: 'doc',
+        id: 'documentation-tooling/fastapi-overview'
+      },
+      items: [
+        'documentation-tooling/getting-started',
+        {
+          type: 'category',
+          label: 'API Reference',
+          items: [
+            'documentation-tooling/reference/get-user',
+            'documentation-tooling/reference/post-transaction',
+          ],
+        }
+      ],
     },
   ],
-  apiSidebar: [
-    'api-documentation/intro',
+  
+apiSidebar: [
     {
-      type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
-    },
+      type: 'doc',
+      label: 'Introduction',
+      id: 'api-documentation/intro',
+    }
   ],
-   
 };
+
 
 export default sidebars;
