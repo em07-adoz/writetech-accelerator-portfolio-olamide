@@ -35,5 +35,6 @@ Only the completed projects currently have working links. Remaining modules will
 ## 🔗 Additional Links
 
 - [LinkedIn](https://www.linkedin.com/in/olamidelawal6762007/)
+- [Medium](https://medium.com/@em07_adoz)
 
 Thanks for checking out my work!
