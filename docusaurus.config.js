@@ -117,28 +117,28 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: ' Explore Docs',
             items: [
               {
-                label: 'Tutorial',
+                label: 'Overview',
                 to: '/docs/intro',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Connect',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Linkedin',
+                href: 'https://www.linkedin.com/in/olamide--lawal/',
               },
               {
                 label: 'X',
-                href: 'https://x.com/docusaurus',
+                href: 'https://x.com/em07_adoz',
+              },
+              {
+                label: 'Mail',
+                href: 'mailto:lawalolamide676@gmail.com',
               },
             ],
           },
@@ -151,12 +151,12 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/em07-adoz',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Built by Olamide @ writetech accelerator program 2025.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Built by Olamide`,
       },
       prism: {
         theme: prismThemes.github,

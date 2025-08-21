@@ -4,32 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Clear Docs',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        No jargon, no clutter.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Modern Docs',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Built with a Docs-as-Code approach — using version control, Markdown, and automation — to keep things structured and reliable.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Drafted with Care',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Every page is drafted with clarity.
       </>
     ),
   },
