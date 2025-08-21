@@ -46,8 +46,8 @@ const sidebars = {
           type: 'category',
           label: 'API Reference',
           items: [
-            'documentation-tooling/reference/get-user',
-            'documentation-tooling/reference/post-transaction',
+            'documentation-tooling/reference/get-contact',
+            'documentation-tooling/reference/create-campaign',
           ],
         }
       ],

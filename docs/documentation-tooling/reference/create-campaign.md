@@ -1,5 +1,5 @@
 ---
-id: Campaign
+id: create-campaign
 title: Create Campaign
 ---
 
