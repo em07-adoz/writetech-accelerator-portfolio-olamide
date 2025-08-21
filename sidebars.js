@@ -35,10 +35,10 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Fast API',
+      label: 'Mautic',
       link: {
         type: 'doc',
-        id: 'documentation-tooling/fastapi-overview'
+        id: 'documentation-tooling/mautic-overview'
       },
       items: [
         'documentation-tooling/getting-started',
