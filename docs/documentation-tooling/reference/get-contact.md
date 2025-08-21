@@ -11,6 +11,7 @@ This endpoint allows you to **retrieve details of a specific contact** in Mautic
 
 ```http
 GET /api/contacts/{contactId}
+```
 
 ## Full URL Example
 ```text
