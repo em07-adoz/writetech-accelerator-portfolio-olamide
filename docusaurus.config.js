@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: ' Olamide\'s Technical Writing Portfolio',
+  title: ' Olamide\'s Docs',
   tagline: 'My portfolio for the WriteTech Accelerator Program showcasing projects from each module and final deliverables.',
   favicon: 'img/favicon.ico',
 
@@ -91,19 +91,13 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'profileSidebar',
             position: 'left',
-            label: 'Overview',
+            label: 'About Me',
           },
           {
             type: 'docSidebar',
-            sidebarId: 'toolingSidebar',
+            sidebarId: 'projectSidebar',
             position: 'left',
-            label: 'Docs Tooling',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'apiSidebar',
-            position: 'left',
-            label: 'API Documentation',
+            label: 'Projects',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -120,9 +114,14 @@ const config = {
             title: ' Explore Docs',
             items: [
               {
-                label: 'Overview',
+                label: 'About Me',
+                to: '/docs/About-me',
+              },
+              {
+                label: 'Projects',
                 to: '/docs/intro',
               },
+
             ],
           },
           {

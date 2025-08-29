@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Clear Docs',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/writinga.svg').default,
     description: (
       <>
         No jargon, no clutter.
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Modern Docs',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/writing b.svg').default,
     description: (
       <>
         Built with a Docs-as-Code approach — using version control, Markdown, and automation — to keep things structured and reliable.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Drafted with Care',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/writingc.svg').default,
     description: (
       <>
         Every page is drafted with clarity.

@@ -23,17 +23,26 @@ const sidebars = {
   profileSidebar: [
     {
       type: 'doc',
+      label: 'My Profile',
+      id: 'About Me',
+    },
+  ],
+
+  projectSidebar: [
+    {
+      type: 'doc',
       label: 'Overview',
       id: 'intro',
     },
-  ],
-  toolingSidebar: [
     {
-      type: 'doc',
-      label: 'Introduction',
-      id: 'documentation-tooling/intro',
-    },
-    {
+      type: 'category',
+      label: 'Documentation Tooling',
+      link: {
+        type: 'doc',
+        id: 'documentation-tooling/intro'
+      },
+      items: [
+        {
       type: 'category',
       label: 'Mautic',
       link: {
@@ -52,14 +61,40 @@ const sidebars = {
         }
       ],
     },
-  ],
-  
-apiSidebar: [
+      ]
+    }, 
+
     {
-      type: 'doc',
-      label: 'Introduction',
-      id: 'api-documentation/intro',
-    }
+      type: 'category',
+      label: 'API Documentation and Open API',
+      link: {
+        type: 'doc',
+        id: 'api-documentation/intro'
+      },
+      items: [
+        {
+      type: 'category',
+      label: 'Chimoney',
+      link: {
+        type: 'doc',
+        id: 'api-documentation/chimoney-overview'
+      },
+      items: [
+        'api-documentation/getting-started',
+        {
+          type: 'category',
+          label: 'API Reference',
+          items: [
+            'api-documentation/reference/get-transaction',
+            'api-documentation/reference/post-transaction',
+          ],
+        }
+      ],
+    },
+
+      ]
+    },
+
   ],
 };
 
