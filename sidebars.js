@@ -24,7 +24,7 @@ const sidebars = {
     {
       type: 'doc',
       label: 'My Profile',
-      id: 'About Me',
+      id: 'About-me',
     },
   ],
 
