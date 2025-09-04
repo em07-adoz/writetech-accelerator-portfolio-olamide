@@ -1,0 +1,32 @@
+name: Practice Workflow
+
+on:
+  push:
+    branches:
+      - portfolio   # runs only when you push to portfolio branch
+  workflow_dispatch:
+
+jobs:
+  practice-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Print GitHub username and repo details
+        run: echo "Username: ${{ github.actor }}, Repository: ${{ github.repository }}"
+
+      - name: Install Vale
+        run: |
+          curl -fsSL https://install.goreleaser.com/github.com/errata-ai/vale.sh | sh
+          sudo mv bin/vale /usr/local/bin/
+
+      - name: Check Vale installation
+        run: |
+          if command -v vale &> /dev/null
+          then
+            echo "Vale was installed on my machine."
+          else
+            echo "Vale installation failed."
+          fi
