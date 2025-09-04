@@ -18,8 +18,9 @@ jobs:
         run: echo "Username: ${{ github.actor }}, Repository: ${{ github.repository }}"
 
       - name: Install Vale
-        run: |
-          brew install vale
+        uses: errata-ai/vale-action@reviewdog
+        with:
+          version: latest
 
       - name: Verify Vale installation
         run: |
