@@ -121,7 +121,6 @@ const config = {
                 label: 'Projects',
                 to: '/docs/intro',
               },
-
             ],
           },
           {
