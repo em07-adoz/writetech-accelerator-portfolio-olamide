@@ -1,16 +1,33 @@
-name: Vale Install Confirmation
+name: Print User and Vale Status
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  check-vale:
+  print-details-and-install-vale:
     runs-on: ubuntu-latest
-    steps:
-      - name: Print GitHub Username and Repo
-        run: 'echo "GitHub User: ${{ github.actor }}, Repo: ${{ github.repository }}"'
 
-      - name: Print Vale Installation Confirmation
-        run: 'echo "Vale was installed on my machine."'
+    steps:
+      # Step 1: Print GitHub username and repository details
+      - name: Print GitHub Details
+        run: |
+          echo "GitHub Username: ${{ github.actor }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "Commit SHA: ${{ github.sha }}"
+
+      # Step 2: Install Vale
+      - name: Install Vale
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y vale || echo "Vale installation failed."
+          if command -v vale >/dev/null 2>&1; then
+            echo "Vale was installed on my machine."
+          else
+            echo "Vale installation was not successful."
+          fi
