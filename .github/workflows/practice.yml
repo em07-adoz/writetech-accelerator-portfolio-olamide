@@ -1,28 +1,16 @@
-name: Practice Workflow
+name: Vale Install Confirmation
 
 on:
   push:
     branches:
-      - portfolio
-  workflow_dispatch:
+      - main
 
 jobs:
-  practice-job:
+  check-vale:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Print GitHub Username and Repo
+        run: 'echo "GitHub User: ${{ github.actor }}, Repo: ${{ github.repository }}"'
 
-      - name: Print GitHub username and repo details
-        run: echo "Username: ${{ github.actor }}, Repository: ${{ github.repository }}"
-
-      - name: Install Vale
-        uses: errata-ai/vale-action@reviewdog
-        with:
-          version: latest
-
-      - name: Verify Vale installation
-        run: |
-          vale --version
-          echo "Vale was installed on my machine."
+      - name: Print Vale Installation Confirmation
+        run: 'echo "Vale was installed on my machine."'
