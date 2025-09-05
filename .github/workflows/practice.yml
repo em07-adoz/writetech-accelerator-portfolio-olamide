@@ -1,4 +1,4 @@
-name: Practice GitHub Actions Workflow
+name: Portfolio Practice Workflow
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - portfolio
 
 jobs:
-  print-details-and-install-vale:
+  print-details-and-verify-vale:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,13 +17,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Print GitHub username and repository details
+      # Step 2: Print GitHub username and repo details
       - name: Print GitHub username and repo details
         run: |
           echo "GitHub Username: ${{ github.actor }}"
           echo "Repository: ${{ github.repository }}"
           echo "Event: ${{ github.event_name }}"
           echo "SHA: ${{ github.sha }}"
+          echo "Branch: ${{ github.ref_name }}"
 
       # Step 3: Install Vale
       - name: Install Vale
@@ -37,7 +38,8 @@ jobs:
         run: |
           if command -v vale >/dev/null 2>&1; then
             echo "Vale was installed on my machine."
+            vale --version
           else
-            echo "Vale installation failed."
+            echo "Vale is not installed."
             exit 1
           fi
