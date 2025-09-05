@@ -1,33 +1,43 @@
-name: Print User and Vale Status
+name: Practice GitHub Actions Workflow
 
 on:
   push:
     branches:
-      - main
+      - portfolio
   pull_request:
     branches:
-      - main
+      - portfolio
 
 jobs:
   print-details-and-install-vale:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Print GitHub username and repository details
-      - name: Print GitHub Details
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Print GitHub username and repository details
+      - name: Print GitHub username and repo details
         run: |
           echo "GitHub Username: ${{ github.actor }}"
           echo "Repository: ${{ github.repository }}"
           echo "Event: ${{ github.event_name }}"
-          echo "Commit SHA: ${{ github.sha }}"
+          echo "SHA: ${{ github.sha }}"
 
-      # Step 2: Install Vale
+      # Step 3: Install Vale
       - name: Install Vale
         run: |
           sudo apt-get update
-          sudo apt-get install -y vale || echo "Vale installation failed."
+          sudo apt-get install -y vale
+        continue-on-error: false
+
+      # Step 4: Verify Vale installation and print message
+      - name: Verify Vale installation
+        run: |
           if command -v vale >/dev/null 2>&1; then
             echo "Vale was installed on my machine."
           else
-            echo "Vale installation was not successful."
+            echo "Vale installation failed."
+            exit 1
           fi
