@@ -1,45 +1,18 @@
-name: Portfolio Practice Workflow
-
-on:
-  push:
-    branches:
-      - portfolio
-  pull_request:
-    branches:
-      - portfolio
-
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
 jobs:
-  print-details-and-verify-vale:
+  Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # Step 2: Print GitHub username and repo details
-      - name: Print GitHub username and repo details
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v5
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
         run: |
-          echo "GitHub Username: ${{ github.actor }}"
-          echo "Repository: ${{ github.repository }}"
-          echo "Event: ${{ github.event_name }}"
-          echo "SHA: ${{ github.sha }}"
-          echo "Branch: ${{ github.ref_name }}"
-
-      # Step 3: Install Vale
-      - name: Install Vale
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y vale
-        continue-on-error: false
-
-      # Step 4: Verify Vale installation and print message
-      - name: Verify Vale installation
-        run: |
-          if command -v vale >/dev/null 2>&1; then
-            echo "Vale was installed on my machine."
-            vale --version
-          else
-            echo "Vale is not installed."
-            exit 1
-          fi
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
